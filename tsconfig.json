@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "declaration": true,
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "filesGlob": [
+        "ng2-cache.ts",
+        "./src/**/*.ts"
+    ],
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": { "rewriteTsconfig": false }
+}
