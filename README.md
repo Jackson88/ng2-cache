@@ -57,7 +57,7 @@ export class ExampleComponent {
 
 ```
 
-By default service store data session storage, you could select one of storages:
+By default service store data in session storage, you could select one of storages:
  - session storage
  - local storage
  - memory
