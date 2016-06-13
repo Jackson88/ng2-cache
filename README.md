@@ -19,7 +19,8 @@ import {CacheService} from 'ng2-cache/ng2-cache';
 
 @Component({
     selector: 'some-selector',
-    template: '<div>Template</div>'
+    template: '<div>Template</div>',
+    providers: [ CacheService ]
 })
 export class ExampleComponent {
 
