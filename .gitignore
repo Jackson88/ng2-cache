@@ -4,6 +4,7 @@ npm-debug.log
 
 # OS generated files
 .DS_Store
+.idea
 
 # Ignored files
 *.js

@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "description": "Client side caching service for Angular2",
   "main": "ng2-cache.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Jackson88/ng2-cache.git"
+  },
   "scripts": {
-    "prepublish": "tsc"
+    "prepublish": "typings install && tsc"
   },
   "typings": "ng2-cache.d.ts",
   "keywords": [

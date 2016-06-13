@@ -1,1 +1,3 @@
-Client side caching service for Angular2# ng2-cache
+# ng2-cache
+
+Client side caching service for Angular2

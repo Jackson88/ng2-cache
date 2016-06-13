@@ -10,9 +10,17 @@
     "exclude": [
         "node_modules"
     ],
-    "filesGlob": [
+    "files": [
         "ng2-cache.ts",
-        "./src/**/*.ts"
+        "./src/services/cache.service.ts",
+        "./src/services/storage/cache-storage-abstract.service.ts",
+        "./src/enums/cache-storages.enum.ts",
+        "./src/services/storage/local-storage/cache-local-storage.service.ts",
+        "./src/services/storage/memory/cache-memory.service.ts",
+        "./src/services/storage/session-storage/cache-session-storage.service.ts",
+        "./src/interfaces/cache-options.interface.ts",
+        "./src/interfaces/storage-value.interface.ts",
+        "typings/browser.d.ts"
     ],
     "compileOnSave": false,
     "buildOnSave": false,
