@@ -35,10 +35,10 @@ export class ExampleComponent {
         this._cacheService.set('key', ['some data'], {maxAge: 5 * 60});
 
         //put some data to cache for 1 hour (expires - timestamp with milliseconds)
-        this._cacheService.set('key', ['some data'], {expires: Date.now() + 1000 * 60 * 60});
+        this._cacheService.set('key', {'some': 'data'}, {expires: Date.now() + 1000 * 60 * 60});
 
         //put some data to cache with tag "tag"
-        this._cacheService.set('key', ['some data'], {tag: 'tag'});
+        this._cacheService.set('key', 'some data', {tag: 'tag'});
 
         //check if data exists in cache
         let exists: boolean = this._cacheService.exists('key');
@@ -62,6 +62,7 @@ By default service store data in session storage, you could select one of storag
  - session storage
  - local storage
  - memory
+
 If current storage is not available - service will choose memory storage.
 
 To change storage to local storage:
