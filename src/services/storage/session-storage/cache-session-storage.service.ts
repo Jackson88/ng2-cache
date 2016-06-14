@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 import {CacheStorageAbstract} from '../cache-storage-abstract.service';
 import {CacheStoragesEnum} from '../../../enums/cache-storages.enum';
 import {StorageValueInterface} from '../../../interfaces/storage-value.interface';
