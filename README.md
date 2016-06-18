@@ -14,8 +14,10 @@ Usage:
 
 ```typescript
 
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {CacheService} from 'ng2-cache/ng2-cache';
+
+declare var BUILD_VERSION: string;
 
 @Component({
     selector: 'some-selector',
@@ -27,6 +29,9 @@ export class ExampleComponent {
     constructor(private _cacheService: CacheService) {}
 
     public func() {
+
+        //set global prefix as build version
+        this._cacheService.setGlobalPrefix(BUILD_VERSION);
 
         //put some data to cache "forever"
         this._cacheService.set('key', ['some data']);
