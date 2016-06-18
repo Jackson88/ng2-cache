@@ -25,6 +25,11 @@ export class CacheService {
         maxAge : Number.MAX_VALUE
     };
 
+    /**
+     * Cache prefix
+     */
+    private _prefix: string = CACHE_PREFIX;
+
     public constructor(@Optional() private _storage: CacheStorageAbstract) {
         this._validateStorage();
     }
@@ -123,6 +128,14 @@ export class CacheService {
     }
 
     /**
+     * Set global cache key prefix
+     * @param prefix
+     */
+    public setGlobalPrefix(prefix: string) {
+        this._prefix = prefix;
+    }
+
+    /**
      * Validate cache storage
      * @private
      */
@@ -171,11 +184,11 @@ export class CacheService {
     }
 
     private _toStorageKey(key: string) {
-        return CACHE_PREFIX + key;
+        return this._getCachePrefix() + key;
     }
 
     private _fromStorageKey(key: string) {
-        return key.replace(CACHE_PREFIX, '');
+        return key.replace(this._getCachePrefix(), '');
     }
 
     /**
@@ -240,6 +253,15 @@ export class CacheService {
             tags[tag].push(key);
         }
         this.set(this._tagsStorageKey(), tags);
+    }
+
+    /**
+     * Get global cache prefix
+     * @returns {string}
+     * @private
+     */
+    private _getCachePrefix() {
+        return this._prefix;
     }
 
     private _tagsStorageKey() {
