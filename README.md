@@ -15,7 +15,7 @@ Usage:
 ```typescript
 
 import {Component} from '@angular/core';
-import {CacheService} from 'ng2-cache/ng2-cache';
+import {CacheService, CacheStoragesEnum} from 'ng2-cache/ng2-cache';
 
 declare var BUILD_VERSION: string;
 
@@ -34,7 +34,8 @@ export class ExampleComponent {
         this._cacheService.setGlobalPrefix(BUILD_VERSION);
 
         //put some data to cache "forever"
-        this._cacheService.set('key', ['some data']);
+        //returns true is data was cached successfully, otherwise - false
+        let result: boolean = this._cacheService.set('key', ['some data']);
 
         //put some data to cache for 5 minutes (maxAge - in seconds)
         this._cacheService.set('key', ['some data'], {maxAge: 5 * 60});
@@ -44,6 +45,9 @@ export class ExampleComponent {
 
         //put some data to cache with tag "tag"
         this._cacheService.set('key', 'some data', {tag: 'tag'});
+        
+        //get some data by key, null - if there is no data or data has expired
+        let data: any|null = this._cacheService.get('key');
 
         //check if data exists in cache
         let exists: boolean = this._cacheService.exists('key');
@@ -57,6 +61,9 @@ export class ExampleComponent {
         //get all data related to tag "tag" :
         // {'key' => 'key data', ...}
         this._cacheService.getTagData('tag');
+        
+        //change storage (returns new instance of service with needed storage)
+        this._cacheService.useStorage(CacheStoragesEnum.LOCAL_STORAGE);
 
     }
 }

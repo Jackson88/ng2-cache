@@ -15,7 +15,12 @@ export class CacheLocalStorage extends CacheStorageAbstract {
     }
 
     public setItem(key: string, value: StorageValueInterface) {
-        localStorage.setItem(key, JSON.stringify(value));
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 
     public removeItem(key: string) {

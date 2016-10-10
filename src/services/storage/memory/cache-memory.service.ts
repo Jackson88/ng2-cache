@@ -17,6 +17,7 @@ export class CacheMemoryStorage extends CacheStorageAbstract {
 
     public setItem(key: string, value: StorageValueInterface) {
         this._data[key] = value;
+        return true;
     }
 
     public removeItem(key: string) {

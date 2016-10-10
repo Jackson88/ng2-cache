@@ -43,10 +43,13 @@ export class CacheService {
     public set(key: string, value: any, options?: CacheOptionsInterface) {
         let storageKey = this._toStorageKey(key);
         options = options ? options : this._defaultOptions;
-        this._storage.setItem(storageKey, this._toStorageValue(value, options));
-        if (!this._isSystemKey(key) && options.tag) {
-            this._saveTag(options.tag, storageKey);
+        if (this._storage.setItem(storageKey, this._toStorageValue(value, options))) {
+            if (!this._isSystemKey(key) && options.tag) {
+                this._saveTag(options.tag, storageKey);
+            }
+            return true;
         }
+        return false;
     }
 
 
@@ -113,6 +116,17 @@ export class CacheService {
     }
 
     /**
+     * Create a new instance of cache with needed storage
+     * @param type
+     * @returns {CacheService}
+     */
+    public useStorage(type: CacheStoragesEnum) {
+        let service = new CacheService(this._initStorage(type));
+        service.setGlobalPrefix(this._getCachePrefix());
+        return service;
+    }
+
+    /**
      * Remove all by tag
      * @param tag
      */
@@ -141,10 +155,10 @@ export class CacheService {
      */
     private _validateStorage() {
         if (!this._storage) {
-            this._initStorage(DEFAULT_STORAGE);
+            this._storage = this._initStorage(DEFAULT_STORAGE);
         }
         if (!this._storage.isEnabled()) {
-            this._initStorage(DEFAULT_ENABLED_STORAGE);
+            this._storage = this._initStorage(DEFAULT_ENABLED_STORAGE);
         }
     }
 
@@ -172,15 +186,17 @@ export class CacheService {
      * @returns {CacheStorageAbstract}
      */
     private _initStorage(type: CacheStoragesEnum) {
+        let storage: CacheStorageAbstract;
         switch (type) {
             case CacheStoragesEnum.SESSION_STORAGE:
-                this._storage = new CacheSessionStorage();
+                storage = new CacheSessionStorage();
                 break;
             case CacheStoragesEnum.LOCAL_STORAGE:
-                this._storage = new CacheLocalStorage();
+                storage = new CacheLocalStorage();
                 break;
-            default: this._storage = new CacheMemoryStorage();
+            default: storage = new CacheMemoryStorage();
         }
+        return storage;
     }
 
     private _toStorageKey(key: string) {

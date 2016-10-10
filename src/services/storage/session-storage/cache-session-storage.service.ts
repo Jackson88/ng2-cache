@@ -15,7 +15,12 @@ export class CacheSessionStorage extends CacheStorageAbstract {
     }
 
     public setItem(key: string, value: StorageValueInterface) {
-        sessionStorage.setItem(key, JSON.stringify(value));
+        try {
+            sessionStorage.setItem(key, JSON.stringify(value));
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 
     public removeItem(key: string) {
