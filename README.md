@@ -89,7 +89,7 @@ import {CacheService, CacheStorageAbstract, CacheLocalStorage} from 'ng2-cache/n
     template: '<div>Template</div>',
     providers: [
         CacheService,
-        provide(CacheStorageAbstract, { useClass: CacheLocalStorage })
+        {provide: CacheStorageAbstract, useClass:CacheLocalStorage}
     ]
 })
 

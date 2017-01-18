@@ -1,5 +1,3 @@
-import {CacheStoragesEnum} from '../enums/cache-storages.enum';
-
 export interface CacheOptionsInterface {
 
     /**

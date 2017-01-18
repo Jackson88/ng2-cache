@@ -2,6 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
+        "lib": ["es2015", "dom"],
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "declaration": true,
@@ -19,8 +20,7 @@
         "./src/services/storage/memory/cache-memory.service.ts",
         "./src/services/storage/session-storage/cache-session-storage.service.ts",
         "./src/interfaces/cache-options.interface.ts",
-        "./src/interfaces/storage-value.interface.ts",
-        "typings/browser.d.ts"
+        "./src/interfaces/storage-value.interface.ts"
     ],
     "compileOnSave": false,
     "buildOnSave": false,

@@ -1,6 +1,6 @@
 {
   "name": "ng2-cache",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Client side caching service for Angular2",
   "main": "ng2-cache.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "git+ssh://git@github.com:Jackson88/ng2-cache.git"
   },
   "scripts": {
-    "prepublish": "typings install && tsc"
+    "prepublish": "tsc"
   },
   "typings": "ng2-cache.d.ts",
   "keywords": [
@@ -20,14 +20,12 @@
   "author": "Evgenii Romanov",
   "license": "ISC",
   "peerDependencies": {
-    "@angular/core":  "^2.0.0-rc.1",
-    "es6-shim": "^0.35.1",
+    "@angular/core":  "^2.0.1",
     "reflect-metadata": "^0.1.2",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "^0.6.12"
+    "rxjs": "^5.0.1",
+    "zone.js": "^0.7.1"
   },
   "devDependencies": {
-    "typescript": "^1.8.10",
-    "typings": "0.8.1"
+    "typescript": "^2.0.2"
   }
 }
