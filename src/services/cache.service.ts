@@ -103,7 +103,7 @@ export class CacheService {
      */
     public getTagData(tag: string) {
         let tags = this.get(this._tagsStorageKey()) || {},
-            result : any = {};
+            result : {[key: string]: any} = {};
         if (tags[tag]) {
             tags[tag].forEach((key: string) => {
                 let data = this.get(this._fromStorageKey(key));
