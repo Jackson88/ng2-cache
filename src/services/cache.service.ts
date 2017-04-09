@@ -242,7 +242,7 @@ export class CacheService {
      * @private
      */
     private _validateStorageValue(value: StorageValueInterface) {
-        return value.options.expires > Date.now();
+        return !!value.options.expires && value.options.expires > Date.now();
     }
 
     /**
