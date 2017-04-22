@@ -1,6 +1,6 @@
 {
   "name": "ng2-cache",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Client side caching service for Angular2",
   "main": "ng2-cache.js",
   "repository": {
@@ -20,12 +20,11 @@
   "author": "Evgenii Romanov",
   "license": "ISC",
   "peerDependencies": {
-    "@angular/core":  "^2.0.1",
-    "reflect-metadata": "^0.1.2",
+    "@angular/core": "^4.0.3",
     "rxjs": "^5.0.1",
-    "zone.js": "^0.7.1"
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "typescript": "^2.0.2"
+    "typescript": "~2.1.0"
   }
 }
