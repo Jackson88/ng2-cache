@@ -13,6 +13,7 @@
     ],
     "files": [
         "ng2-cache.ts",
+        "./src/ng2-cache.module.ts",
         "./src/services/cache.service.ts",
         "./src/services/storage/cache-storage-abstract.service.ts",
         "./src/enums/cache-storages.enum.ts",
