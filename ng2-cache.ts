@@ -6,3 +6,4 @@ export {CacheMemoryStorage} from './src/services/storage/memory/cache-memory.ser
 export {CacheOptionsInterface} from './src/interfaces/cache-options.interface';
 export {CacheSessionStorage} from
     './src/services/storage/session-storage/cache-session-storage.service';
+export {Ng2CacheModule} from './src/ng2-cache.module';
