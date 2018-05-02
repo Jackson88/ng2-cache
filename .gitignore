@@ -1,12 +1,8 @@
-# Node generated files
-node_modules
-npm-debug.log
+$ cat .gitignore
+/node_modules
+/dist
+/documentation
+/coverage
 
-# OS generated files
-.DS_Store
-.idea
-
-# Ignored files
-*.js
-*.map
-*.d.ts
+*.log
+*.tgz

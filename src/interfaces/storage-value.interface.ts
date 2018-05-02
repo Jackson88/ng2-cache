@@ -5,10 +5,10 @@ export interface StorageValueInterface {
     /**
      * Cached data
      */
-    value: any
+    value: any;
 
     /**
      * Cached options
      */
-    options: CacheOptionsInterface
+    options: CacheOptionsInterface;
 }

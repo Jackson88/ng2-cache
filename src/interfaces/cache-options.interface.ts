@@ -3,16 +3,16 @@ export interface CacheOptionsInterface {
     /**
      * Expires timestamp
      */
-    expires?: number
+    expires?: number;
 
     /**
      * Max age in seconds
      */
-    maxAge?: number
+    maxAge?: number;
 
     /**
      * Tag for this key
      */
-    tag?: string
+    tag?: string;
 
 }

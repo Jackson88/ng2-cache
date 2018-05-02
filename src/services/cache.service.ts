@@ -17,8 +17,6 @@ export class CacheService {
 
     /**
      * Default cache options
-     * @type CacheOptionsInterface
-     * @private
      */
     private _defaultOptions: CacheOptionsInterface = {
         expires: Number.MAX_VALUE,
@@ -56,7 +54,7 @@ export class CacheService {
     /**
      * Get data from cache
      * @param key
-     * @returns {any}
+     * @returns any
      */
     public get(key: string): any {
         let storageValue = this._storage.getItem(this._toStorageKey(key)),
@@ -74,7 +72,7 @@ export class CacheService {
     /**
      * Check if value exists
      * @param key
-     * @returns {boolean}
+     * @returns boolean
      */
     public exists(key: string): boolean {
         return !!this.get(key);
@@ -99,7 +97,7 @@ export class CacheService {
     /**
      * Get all tag data
      * @param tag
-     * @returns {Array}
+     * @returns Array
      */
     public getTagData(tag: string) {
         let tags = this.get(this._tagsStorageKey()) || {},
@@ -118,7 +116,7 @@ export class CacheService {
     /**
      * Create a new instance of cache with needed storage
      * @param type
-     * @returns {CacheService}
+     * returns CacheService
      */
     public useStorage(type: CacheStoragesEnum) {
         let service = new CacheService(this._initStorage(type));
@@ -151,7 +149,6 @@ export class CacheService {
 
     /**
      * Validate cache storage
-     * @private
      */
     private _validateStorage() {
         if (!this._storage) {
@@ -165,7 +162,6 @@ export class CacheService {
     /**
      * Remove key from tags keys list
      * @param key
-     * @private
      */
     private _removeFromTag(key: string) {
         let tags = this.get(this._tagsStorageKey()) || {},
@@ -183,7 +179,7 @@ export class CacheService {
     /**
      * Init storage by type
      * @param type
-     * @returns {CacheStorageAbstract}
+     * @returns CacheStorageAbstract
      */
     private _initStorage(type: CacheStoragesEnum) {
         let storage: CacheStorageAbstract;
@@ -211,8 +207,7 @@ export class CacheService {
      * Prepare value to set to storage
      * @param value
      * @param options
-     * @returns {{value: any, options: CacheOptionsInterface}}
-     * @private
+     * returns {value: any, options: CacheOptionsInterface}
      */
     private _toStorageValue(value: any, options: CacheOptionsInterface): StorageValueInterface {
         return {
@@ -224,8 +219,7 @@ export class CacheService {
     /**
      * Prepare options to set to storage
      * @param options
-     * @returns {CacheOptionsInterface}
-     * @private
+     * @returns CacheOptionsInterface
      */
     private _toStorageOptions(options: CacheOptionsInterface): CacheOptionsInterface {
         var storageOptions: CacheOptionsInterface = {};
@@ -238,8 +232,7 @@ export class CacheService {
     /**
      * Validate storage value
      * @param value
-     * @returns {boolean}
-     * @private
+     * @returns boolean
      */
     private _validateStorageValue(value: StorageValueInterface) {
         return !!value.options.expires && value.options.expires > Date.now();
@@ -248,8 +241,7 @@ export class CacheService {
     /**
      * check if its system cache key
      * @param key
-     * @returns {boolean}
-     * @private
+     * returns boolean
      */
     private _isSystemKey(key: string) {
         return [this._tagsStorageKey()].indexOf(key) !== -1;
@@ -259,7 +251,6 @@ export class CacheService {
      * Save tag to list of tags
      * @param tag
      * @param key
-     * @private
      */
     private _saveTag(tag: string, key: string) {
         let tags = this.get(this._tagsStorageKey()) || {};
@@ -273,8 +264,8 @@ export class CacheService {
 
     /**
      * Get global cache prefix
-     * @returns {string}
-     * @private
+     * returns {string}
+     * private
      */
     private _getCachePrefix() {
         return this._prefix;

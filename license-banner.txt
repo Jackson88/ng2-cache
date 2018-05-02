@@ -1,0 +1,4 @@
+/**
+ * @license ng2-cache
+ * ISC license
+ */
