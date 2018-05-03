@@ -41,7 +41,7 @@
         "client-side",
         "caching"
     ],
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "tslib": "^1.7.1"
     },
