@@ -10,7 +10,7 @@ import {StorageValueInterface} from '../../../interfaces/storage-value.interface
 export class CacheLocalStorage extends CacheStorageAbstract {
 
     public getItem(key: string) {
-        let value = localStorage.getItem(key);
+        const value = localStorage.getItem(key);
         return value ? JSON.parse(value) : null;
     }
 

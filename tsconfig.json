@@ -1,29 +1,25 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "lib": ["es2015", "dom"],
+        "baseUrl": ".",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "declaration": true,
-        "sourceMap": true
+        "strict": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "rootDir": ".",
+        "sourceMap": true,
+        "inlineSources": true,
+        "target": "es5",
+        "skipLibCheck": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "typeRoots": [
+            "node_modules/@types/"
+        ]
     },
     "exclude": [
         "node_modules"
-    ],
-    "files": [
-        "ng2-cache.ts",
-        "./src/ng2-cache.module.ts",
-        "./src/services/cache.service.ts",
-        "./src/services/storage/cache-storage-abstract.service.ts",
-        "./src/enums/cache-storages.enum.ts",
-        "./src/services/storage/local-storage/cache-local-storage.service.ts",
-        "./src/services/storage/memory/cache-memory.service.ts",
-        "./src/services/storage/session-storage/cache-session-storage.service.ts",
-        "./src/interfaces/cache-options.interface.ts",
-        "./src/interfaces/storage-value.interface.ts"
-    ],
-    "compileOnSave": false,
-    "buildOnSave": false,
-    "atom": { "rewriteTsconfig": false }
+    ]
 }
