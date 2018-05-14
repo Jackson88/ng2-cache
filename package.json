@@ -1,6 +1,6 @@
 {
     "name": "ng2-cache",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Client side caching for Angular5",
     "main": "./bundles/ng2-cache.umd.js",
     "module": "./esm5/ng2-cache.js",
