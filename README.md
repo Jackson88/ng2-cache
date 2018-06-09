@@ -1,4 +1,8 @@
-# ng2-cache
+ng2-cache  
+==============
+[![npm](https://img.shields.io/npm/dm/ng2-cache.svg)](https://www.npmjs.com/package/ng2-cache)
+[![npm](https://img.shields.io/npm/dt/ng2-cache.svg)](https://www.npmjs.com/package/ng2-cache)
+
 
 >ng2-cache library compatible with AoT compilation &amp; Tree shaking like an official package.
 
